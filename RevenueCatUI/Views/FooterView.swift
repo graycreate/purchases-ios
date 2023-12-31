@@ -43,6 +43,7 @@ struct FooterView: View {
             mode: configuration.mode,
             fonts: configuration.fonts,
             color: configuration.colors.text1Color,
+            bold: bold,
             purchaseHandler: purchaseHandler,
             displayingAllPlans: displayingAllPlans
         )
@@ -102,7 +103,7 @@ struct FooterView: View {
                 )
             }
         }
-        .foregroundColor(self.color)
+        .foregroundColor(self.color.opacity(0.7))
         .font(self.fonts.font(for: self.font).weight(self.fontWeight))
         .frame(maxWidth: .infinity)
         .padding(.horizontal)
