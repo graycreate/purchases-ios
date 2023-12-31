@@ -103,7 +103,7 @@ struct FooterView: View {
                 )
             }
         }
-        .foregroundColor(self.color.opacity(0.7))
+        .foregroundColor(self.color.opacity(0.5))
         .font(self.fonts.font(for: self.font).weight(self.fontWeight))
         .frame(maxWidth: .infinity)
         .padding(.horizontal)

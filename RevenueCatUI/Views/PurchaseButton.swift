@@ -112,7 +112,9 @@ struct PurchaseButton: View {
 
     @ViewBuilder
     private var backgroundView: some View {
-        Capsule(style: .continuous)
+//        Capsule(style: .continuous)
+//            .foregroundStyle(self.backgroundColor)
+        RoundedRectangle(cornerRadius: 16)
             .foregroundStyle(self.backgroundColor)
     }
 
