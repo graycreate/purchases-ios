@@ -242,10 +242,17 @@ struct Template5View: TemplateViewType {
             self.packageDiscountLabel(package, selected: selected)
                 .padding(8)
         }
+        .background {
+          if selected {
+            self.roundedRectangle
+              .fill(self.configuration.colors.selectedOutline.opacity(0.1))
+          }
+        }
     }
 
     private var footerView: some View {
         FooterView(configuration: self.configuration,
+                   bold: true, 
                    purchaseHandler: self.purchaseHandler,
                    displayingAllPlans: self.$displayingAllPlans)
     }
@@ -272,7 +279,7 @@ struct Template5View: TemplateViewType {
                     ? colors.selectedDiscountText
                     : colors.unselectedDiscountText
                 )
-                .font(self.font(for: .caption))
+                .font(self.font(for: .caption).weight(.bold))
                 .dynamicTypeSize(...Constants.maximumDynamicTypeSize)
         }
     }
