@@ -20,9 +20,10 @@ enum Constants {
     static let fastAnimation: Animation = .easeInOut(duration: 0.1)
     static let toggleAllPlansAnimation: Animation = .spring(response: 0.35, dampingFraction: 0.7)
 
-    static let defaultCornerRadius: CGFloat = 20
-    static let defaultPackageCornerRadius: CGFloat = 16
-    static let defaultPackageBorderWidth: CGFloat = 2
+//    static let defaultCornerRadius: CGFloat = 20
+    static let defaultCornerRadius: CGFloat = 38
+    static let defaultPackageCornerRadius: CGFloat = 22
+    static let defaultPackageBorderWidth: CGFloat = 2.5
 
     static let purchaseInProgressButtonOpacity: CGFloat = 0.4
 

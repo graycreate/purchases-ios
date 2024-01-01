@@ -212,6 +212,7 @@ private extension TemplateViewConfiguration {
                     corners: [.topLeft, .topRight],
                     edgesIgnoringSafeArea: .all
                 )
+                .shadow(radius: 10)
             #endif
         #endif
         }
@@ -239,7 +240,11 @@ private extension TemplateViewConfiguration {
             view.foregroundStyle(.thinMaterial)
             #endif
         } else {
-            view.foregroundStyle(self.colors.backgroundColor)
+          view.foregroundStyle(.thinMaterial)
+            .overlay {
+              self.colors.backgroundColor.opacity(0.8)
+                .ignoresSafeArea()
+            }
         }
     }
 

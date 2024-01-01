@@ -200,6 +200,8 @@ struct Template5View: TemplateViewType {
                 let isSelected = self.selectedPackage.content === package.content
 
                 Button {
+                    let impactHeavy = UIImpactFeedbackGenerator(style: .light)
+                    impactHeavy.impactOccurred()
                     self.selectedPackage = package
                 } label: {
                     self.packageButton(package, selected: isSelected)

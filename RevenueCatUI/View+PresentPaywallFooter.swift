@@ -57,7 +57,7 @@ extension View {
     /// ### Related Articles
     /// [Documentation](https://rev.cat/paywalls)
     public func paywallFooter(
-        offering: Offering,
+        offering: Offering?,
         condensed: Bool = false,
         fonts: PaywallFontProvider = DefaultPaywallFontProvider(),
         purchaseCompleted: PurchaseOrRestoreCompletedHandler? = nil,

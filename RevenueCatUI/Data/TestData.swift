@@ -14,7 +14,7 @@ import SwiftUI
 #if DEBUG
 
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
-internal enum TestData {
+public enum TestData {
 
     static let weeklyProduct = TestStoreProduct(
         localizedTitle: "Weekly",
@@ -586,4 +586,70 @@ extension CustomerInfo {
 
 }
 
+#endif
+
+// MARK: - Fork Data
+#if DEBUG
+@available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
+extension TestData {
+  public static let daystillOffering = Offering(
+    identifier: Self.offeringIdentifier,
+    serverDescription: "Offering",
+    metadata: [:],
+    paywall: .init(
+      templateName: PaywallTemplate.template5.rawValue,
+      config: .init(
+        packages: [PackageType.annual.identifier,
+                   PackageType.monthly.identifier],
+        defaultPackage: PackageType.annual.identifier,
+        images: .init(
+          header: "954459_1692992845.png"
+        ),
+        colors: .init(
+          light: .init(
+            background: "#ffffff",
+            text1: "#000000", // main text color
+            text2: "#ffffff", // Selected discount text
+            text3: "#ffffff",
+            callToActionBackground: "#242424",
+            callToActionForeground: "#ffffff",
+            accent1: "#b24010", 
+            accent2: "#242424", // Selected outline
+            accent3: "#D1D1D1"  // Unselected outline
+          ),
+          dark: .init(
+            background: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).asPaywallColor,
+            text1: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).asPaywallColor,
+            text2: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).asPaywallColor,
+            text3: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).asPaywallColor,
+            callToActionBackground: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).asPaywallColor,
+            callToActionForeground: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1).asPaywallColor,
+            accent1: #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1).asPaywallColor,
+            accent2: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).asPaywallColor,
+            accent3: #colorLiteral(red: 0.5534513806, green: 0.5534513806, blue: 0.5534513806, alpha: 1).asPaywallColor
+          )
+        ),
+        termsOfServiceURL: URL(string: "https://revenuecat.com/tos")!
+      ),
+      localization: .init(
+        title: "Spice Up Your Kitchen - Go Pro for Exclusive Benefits!",
+        callToAction: "Continue",
+        callToActionWithIntroOffer: "Start your Free Trial",
+        offerDetails: "Full access for just **{{ sub_price_per_month }}/mo**",
+        offerDetailsWithIntroOffer: "First **{{ sub_offer_duration }}** free, then just **{{ sub_price_per_month }}/mo**",
+        offerName: "{{ sub_period }}",
+        features: [
+          .init(title: "Unique gourmet recipes", iconID: "tick"),
+          .init(title: "Advanced nutritional recipes", iconID: "apple"),
+          .init(title: "Personalized support from our Chef", iconID: "warning"),
+          .init(title: "Unlimited receipt collections", iconID: "bookmark")
+        ]
+      ),
+      assetBaseURL: Self.paywallAssetBaseURL
+    ),
+    availablePackages: [TestData.monthlyPackage,
+                        TestData.sixMonthPackage,
+                        TestData.annualPackage]
+  )
+}
 #endif
