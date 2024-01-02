@@ -171,7 +171,7 @@ private extension View {
 
     func withPendingData(_ pending: Bool, alignment: Alignment) -> some View {
         self
-            .hidden(if: pending)
+            .opacity(pending ? 0 : 1)
             .overlay {
                 if pending {
                     ProgressView()

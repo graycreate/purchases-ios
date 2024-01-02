@@ -21,7 +21,7 @@ enum Constants {
     static let toggleAllPlansAnimation: Animation = .spring(response: 0.35, dampingFraction: 0.7)
 
 //    static let defaultCornerRadius: CGFloat = 20
-    static let defaultCornerRadius: CGFloat = 38
+    static let defaultCornerRadius: CGFloat = 30
     static let defaultPackageCornerRadius: CGFloat = 22
     static let defaultPackageBorderWidth: CGFloat = 2.5
 

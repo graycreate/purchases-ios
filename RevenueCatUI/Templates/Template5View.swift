@@ -200,8 +200,7 @@ struct Template5View: TemplateViewType {
                 let isSelected = self.selectedPackage.content === package.content
 
                 Button {
-                    let impactHeavy = UIImpactFeedbackGenerator(style: .light)
-                    impactHeavy.impactOccurred()
+                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     self.selectedPackage = package
                 } label: {
                     self.packageButton(package, selected: isSelected)
@@ -300,6 +299,7 @@ struct Template5View: TemplateViewType {
         Image(systemName: systemName)
           .foregroundColor(color)
         Text(package.localization.offerName ?? package.content.productName)
+          .bold()
       }
     }
 

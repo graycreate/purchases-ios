@@ -37,7 +37,7 @@ open class DefaultPaywallFontProvider: PaywallFontProvider {
     // swiftlint:disable:next cyclomatic_complexity missing_docs
     open func font(for textStyle: Font.TextStyle) -> Font {
         switch textStyle {
-        case .largeTitle: return .largeTitle
+          case .largeTitle: return .largeTitle
         case .title: return .title
         case .title2: return .title2
         case .title3: return .title3
